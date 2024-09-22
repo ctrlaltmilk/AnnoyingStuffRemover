@@ -1,0 +1,8 @@
+# ==== Gradle temporary files
+/.gradle/
+/build/
+
+# ==== NeoGradle stuff
+/.idea/
+/.vscode/
+/run/

@@ -1,0 +1,19 @@
+modLoader = "javafml"
+loaderVersion = "[47.2,)"
+
+license = "MPL-2.0"
+
+[[mods]]
+modId = "asr"
+version = "${version}"
+displayName = "Annoying Stuff Remover"
+authors = "ctrlaltmilk"
+description = """
+Removes annoying stuff.
+"""
+displayTest="IGNORE_ALL_VERSION"
+
+[[dependencies.asr]]
+modId = "forge"
+mandatory = true
+versionRange = "[47.1,)"
