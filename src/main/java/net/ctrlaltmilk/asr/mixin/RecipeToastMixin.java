@@ -7,20 +7,20 @@
 package net.ctrlaltmilk.asr.mixin;
 
 import net.ctrlaltmilk.asr.AnnoyingStuffRemover;
-import net.minecraft.client.multiplayer.ClientPacketListener;
+import net.minecraft.client.gui.components.toasts.RecipeToast;
+import net.minecraft.client.gui.components.toasts.ToastComponent;
 import net.minecraft.world.item.crafting.Recipe;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.Redirect;
+import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-@Mixin(ClientPacketListener.class)
-public abstract class ClientPacketListenerMixin {
-    @Redirect(method = "lambda$handleAddOrRemoveRecipes$9", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/item/crafting/Recipe;showNotification()Z"))
-    boolean modifyShowNotification(Recipe<?> self) {
+@Mixin(RecipeToast.class)
+public abstract class RecipeToastMixin {
+    @Inject(method = "addOrUpdate", at = @At("HEAD"), cancellable = true)
+    private static void modifyAddOrUpdate(ToastComponent component, Recipe<?> recipe, CallbackInfo ci) {
         if (AnnoyingStuffRemover.CONFIG.DISABLE_RECIPE_BOOK.get()) {
-            return false;
-        } else {
-            return self.showNotification();
+            ci.cancel();
         }
     }
 }
