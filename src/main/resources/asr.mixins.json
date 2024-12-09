@@ -6,6 +6,7 @@
   "refmap": "asr.refmap.json",
   "client": [
     "AbstractFurnaceScreenMixin",
+    "ClientPacketListenerMixin",
     "CraftingScreenMixin",
     "InventoryScreenMixin",
     "MinecraftMixin",
