@@ -7,6 +7,8 @@ license = "MPL-2.0"
 modId = "asr"
 version = "${version}"
 displayName = "Annoying Stuff Remover"
+logoFile = "icon.png"
+logoBlur = false
 authors = "ctrlaltmilk"
 description = """
 Removes annoying stuff.
