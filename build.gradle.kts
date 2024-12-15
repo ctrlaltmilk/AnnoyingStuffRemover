@@ -5,7 +5,7 @@ plugins {
 
 val modId = "asr"
 
-project.version = "0.2.1"
+project.version = "1.0.0"
 project.group = "net.ctrlaltmilk"
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)
@@ -49,6 +49,8 @@ tasks {
         filesMatching("META-INF/mods.toml") {
             expand(props)
         }
+
+        exclude("*.kra") // Original Krita textures
     }
 
     jar {
