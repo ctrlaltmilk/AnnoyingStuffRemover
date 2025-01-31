@@ -20,7 +20,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public abstract class MinecraftMixin {
     @Shadow @Final public Options options;
 
-    @Inject(method = "setInitialScreen", at = @At("HEAD"))
+    @Inject(method = "addInitialScreens", at = @At("HEAD"))
     void modifyOnboardAccessibility(CallbackInfo ci) {
         if (AnnoyingStuffRemover.CONFIG.DISABLE_ACCESSIBILITY_ONBOARDING.get()) {
             options.onboardAccessibility = false;

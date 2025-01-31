@@ -6,7 +6,7 @@
 
 package net.ctrlaltmilk.asr.config;
 
-import net.minecraftforge.common.ForgeConfigSpec;
+import net.neoforged.neoforge.common.ModConfigSpec;
 
 import java.util.function.Supplier;
 
@@ -16,7 +16,7 @@ public class ASRConfig {
     public final Supplier<Boolean> SKIP_TUTORIAL;
     public final Supplier<Boolean> DISABLE_RECIPE_BOOK;
 
-    public ASRConfig(ForgeConfigSpec.Builder builder) {
+    public ASRConfig(ModConfigSpec.Builder builder) {
         builder.comment(" Whether to disable the initial accessibility onboarding screen");
         DISABLE_ACCESSIBILITY_ONBOARDING = builder.define("disableAccessibilityOnboarding", true);
 

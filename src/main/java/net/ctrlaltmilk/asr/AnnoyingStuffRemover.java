@@ -7,22 +7,26 @@
 package net.ctrlaltmilk.asr;
 
 import net.ctrlaltmilk.asr.config.ASRConfig;
-import net.minecraftforge.common.ForgeConfigSpec;
-import net.minecraftforge.fml.ModLoadingContext;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.config.ModConfig;
-
-import java.util.function.Function;
+import net.neoforged.fml.ModContainer;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.config.IConfigSpec;
+import net.neoforged.fml.config.ModConfig;
+import net.neoforged.neoforge.common.ModConfigSpec;
 
 @Mod(AnnoyingStuffRemover.MOD_ID)
 public class AnnoyingStuffRemover {
     public static final String MOD_ID = "asr";
 
-    public static final ASRConfig CONFIG = registerConfig(ModConfig.Type.CLIENT, ASRConfig::new);
+    public static final ASRConfig CONFIG;
+    public static final IConfigSpec CONFIG_SPEC;
 
-    private static <C> C registerConfig(ModConfig.Type type, Function<ForgeConfigSpec.Builder, C> configConstructor) {
-        var configPair = new ForgeConfigSpec.Builder().configure(configConstructor);
-        ModLoadingContext.get().registerConfig(type, configPair.getRight());
-        return configPair.getLeft();
+    static {
+        var configPair = new ModConfigSpec.Builder().configure(ASRConfig::new);
+        CONFIG = configPair.getLeft();
+        CONFIG_SPEC = configPair.getRight();
+    }
+
+    public AnnoyingStuffRemover(ModContainer container) {
+        container.registerConfig(ModConfig.Type.CLIENT, CONFIG_SPEC);
     }
 }

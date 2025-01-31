@@ -1,11 +1,11 @@
 modLoader = "javafml"
-loaderVersion = "[47.2,)"
+loaderVersion = "[1,)"
 
 license = "MPL-2.0"
 
 [[mods]]
 modId = "asr"
-version = "${version}"
+version = "${file.jarVersion}"
 displayName = "Annoying Stuff Remover"
 logoFile = "icon.png"
 logoBlur = false
@@ -13,9 +13,6 @@ authors = "ctrlaltmilk"
 description = """
 Removes annoying stuff.
 """
-displayTest="IGNORE_ALL_VERSION"
 
-[[dependencies.asr]]
-modId = "forge"
-mandatory = true
-versionRange = "[47.1,)"
+[[mixins]]
+config = "asr.mixins.json"
