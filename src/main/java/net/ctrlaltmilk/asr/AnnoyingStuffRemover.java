@@ -7,13 +7,16 @@
 package net.ctrlaltmilk.asr;
 
 import net.ctrlaltmilk.asr.config.ASRConfig;
+import net.neoforged.api.distmarker.Dist;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.config.IConfigSpec;
 import net.neoforged.fml.config.ModConfig;
+import net.neoforged.neoforge.client.gui.ConfigurationScreen;
+import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
 import net.neoforged.neoforge.common.ModConfigSpec;
 
-@Mod(AnnoyingStuffRemover.MOD_ID)
+@Mod(value = AnnoyingStuffRemover.MOD_ID, dist = Dist.CLIENT)
 public class AnnoyingStuffRemover {
     public static final String MOD_ID = "asr";
 
@@ -28,5 +31,7 @@ public class AnnoyingStuffRemover {
 
     public AnnoyingStuffRemover(ModContainer container) {
         container.registerConfig(ModConfig.Type.CLIENT, CONFIG_SPEC);
+
+        container.registerExtensionPoint(IConfigScreenFactory.class, ConfigurationScreen::new);
     }
 }

@@ -17,16 +17,24 @@ public class ASRConfig {
     public final Supplier<Boolean> DISABLE_RECIPE_BOOK;
 
     public ASRConfig(ModConfigSpec.Builder builder) {
-        builder.comment(" Whether to disable the initial accessibility onboarding screen");
-        DISABLE_ACCESSIBILITY_ONBOARDING = builder.define("disableAccessibilityOnboarding", true);
+        DISABLE_ACCESSIBILITY_ONBOARDING = builder
+                .comment(" Whether to disable the initial accessibility onboarding screen")
+                .translation("config.asr.disable_accessibility_onboarding")
+                .define("disableAccessibilityOnboarding", true);
 
-        builder.comment(" Whether to disable the warning before joining a multiplayer server");
-        DISABLE_MULTIPLAYER_WARNING = builder.define("disableMultiplayerWarning", true);
+        DISABLE_MULTIPLAYER_WARNING = builder
+                .comment(" Whether to disable the warning before joining a multiplayer server")
+                .translation("config.asr.disable_multiplayer_warning")
+                .define("disableMultiplayerWarning", true);
 
-        builder.comment(" Whether to skip the ingame tutorial toasts");
-        SKIP_TUTORIAL = builder.define("skipTutorial", true);
+        SKIP_TUTORIAL = builder
+                .comment(" Whether to skip the ingame tutorial toasts")
+                .translation("config.asr.skip_tutorial")
+                .define("skipTutorial", true);
 
-        builder.comment(" Whether to disable the recipe book in crafting GUIs");
-        DISABLE_RECIPE_BOOK = builder.define("disableRecipeBook", true);
+        DISABLE_RECIPE_BOOK = builder
+                .comment(" Whether to disable the recipe book in crafting GUIs")
+                .translation("config.asr.disable_recipe_book")
+                .define("disableRecipeBook", true);
     }
 }
