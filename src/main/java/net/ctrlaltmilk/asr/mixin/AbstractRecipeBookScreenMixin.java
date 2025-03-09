@@ -11,20 +11,20 @@ import net.minecraft.client.gui.components.Renderable;
 import net.minecraft.client.gui.components.events.GuiEventListener;
 import net.minecraft.client.gui.narration.NarratableEntry;
 import net.minecraft.client.gui.screens.Screen;
-import net.minecraft.client.gui.screens.inventory.InventoryScreen;
+import net.minecraft.client.gui.screens.inventory.AbstractRecipeBookScreen;
 import net.minecraft.network.chat.Component;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
 
-@Mixin(InventoryScreen.class)
-public abstract class InventoryScreenMixin extends Screen {
-    protected InventoryScreenMixin(Component title) {
+@Mixin(AbstractRecipeBookScreen.class)
+public abstract class AbstractRecipeBookScreenMixin extends Screen {
+    protected AbstractRecipeBookScreenMixin(Component title) {
         super(title);
     }
 
-    @Redirect(method = "init", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/screens/inventory/InventoryScreen;addRenderableWidget(Lnet/minecraft/client/gui/components/events/GuiEventListener;)Lnet/minecraft/client/gui/components/events/GuiEventListener;"))
-    <T extends GuiEventListener & Renderable & NarratableEntry> T modifyAddRenderableWidget(InventoryScreen self, T widget) {
+    @Redirect(method = "initButton", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/screens/inventory/AbstractRecipeBookScreen;addRenderableWidget(Lnet/minecraft/client/gui/components/events/GuiEventListener;)Lnet/minecraft/client/gui/components/events/GuiEventListener;"))
+    protected <T extends GuiEventListener & Renderable & NarratableEntry> T modifyAddRenderableWidget(AbstractRecipeBookScreen<?> instance, T widget) {
         if (AnnoyingStuffRemover.CONFIG.DISABLE_RECIPE_BOOK.get()) {
             return null;
         } else {

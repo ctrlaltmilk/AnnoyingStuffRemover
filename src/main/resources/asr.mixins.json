@@ -4,9 +4,7 @@
   "package": "net.ctrlaltmilk.asr.mixin",
   "compatibilityLevel": "JAVA_21",
   "client": [
-    "AbstractFurnaceScreenMixin",
-    "CraftingScreenMixin",
-    "InventoryScreenMixin",
+    "AbstractRecipeBookScreenMixin",
     "MinecraftMixin",
     "RecipeToastMixin",
     "TitleScreenMixin",
