@@ -1,5 +1,5 @@
 modLoader = "javafml"
-loaderVersion = "[47.2,)"
+loaderVersion = "[47,)"
 
 license = "MPL-2.0"
 
@@ -18,4 +18,4 @@ displayTest="IGNORE_ALL_VERSION"
 [[dependencies.asr]]
 modId = "forge"
 mandatory = true
-versionRange = "[47.1,)"
+versionRange = "[47,)"
