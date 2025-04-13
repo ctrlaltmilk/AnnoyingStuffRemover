@@ -22,7 +22,7 @@ public abstract class MinecraftMixin {
 
     @Inject(method = "setInitialScreen", at = @At("HEAD"))
     void modifyOnboardAccessibility(CallbackInfo ci) {
-        if (AnnoyingStuffRemover.CONFIG.DISABLE_ACCESSIBILITY_ONBOARDING.get()) {
+        if (AnnoyingStuffRemover.CONFIG.disableAccessibilityOnboarding.get()) {
             options.onboardAccessibility = false;
             options.save();
         }

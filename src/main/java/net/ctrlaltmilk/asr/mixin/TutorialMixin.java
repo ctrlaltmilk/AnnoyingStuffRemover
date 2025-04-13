@@ -23,7 +23,7 @@ public abstract class TutorialMixin {
 
     @Inject(method = "start", at = @At("HEAD"))
     void modifyTutorialStep(CallbackInfo ci) {
-        if (AnnoyingStuffRemover.CONFIG.SKIP_TUTORIAL.get()) {
+        if (AnnoyingStuffRemover.CONFIG.skipTutorial.get()) {
             minecraft.options.tutorialStep = TutorialSteps.NONE;
             minecraft.options.save();
         }

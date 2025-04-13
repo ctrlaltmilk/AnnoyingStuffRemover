@@ -11,22 +11,26 @@ import net.minecraftforge.common.ForgeConfigSpec;
 import java.util.function.Supplier;
 
 public class ASRConfig {
-    public final Supplier<Boolean> DISABLE_ACCESSIBILITY_ONBOARDING;
-    public final Supplier<Boolean> DISABLE_MULTIPLAYER_WARNING;
-    public final Supplier<Boolean> SKIP_TUTORIAL;
-    public final Supplier<Boolean> DISABLE_RECIPE_BOOK;
+    public final Supplier<Boolean> disableAccessibilityOnboarding;
+    public final Supplier<Boolean> disableMultiplayerWarning;
+    public final Supplier<Boolean> skipTutorial;
+    public final Supplier<Boolean> disableRecipeBook;
+    public final Supplier<Boolean> skipExperimentalWarning;
 
     public ASRConfig(ForgeConfigSpec.Builder builder) {
         builder.comment(" Whether to disable the initial accessibility onboarding screen");
-        DISABLE_ACCESSIBILITY_ONBOARDING = builder.define("disableAccessibilityOnboarding", true);
+        disableAccessibilityOnboarding = builder.define("disableAccessibilityOnboarding", true);
 
         builder.comment(" Whether to disable the warning before joining a multiplayer server");
-        DISABLE_MULTIPLAYER_WARNING = builder.define("disableMultiplayerWarning", true);
+        disableMultiplayerWarning = builder.define("disableMultiplayerWarning", true);
 
         builder.comment(" Whether to skip the ingame tutorial toasts");
-        SKIP_TUTORIAL = builder.define("skipTutorial", true);
+        skipTutorial = builder.define("skipTutorial", true);
 
         builder.comment(" Whether to disable the recipe book in crafting GUIs");
-        DISABLE_RECIPE_BOOK = builder.define("disableRecipeBook", true);
+        disableRecipeBook = builder.define("disableRecipeBook", true);
+
+        builder.comment(" Whether to skip the experimental features warning when creating or joining a world");
+        skipExperimentalWarning = builder.define("skipExperimentalWarning", true);
     }
 }

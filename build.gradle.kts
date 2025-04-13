@@ -5,7 +5,7 @@ plugins {
 
 val modId = "asr"
 
-project.version = "1.0.1"
+project.version = "1.1.0"
 project.group = "net.ctrlaltmilk"
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)

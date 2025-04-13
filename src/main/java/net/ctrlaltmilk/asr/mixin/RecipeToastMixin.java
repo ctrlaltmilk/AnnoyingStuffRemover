@@ -19,7 +19,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public abstract class RecipeToastMixin {
     @Inject(method = "addOrUpdate", at = @At("HEAD"), cancellable = true)
     private static void modifyAddOrUpdate(ToastComponent component, Recipe<?> recipe, CallbackInfo ci) {
-        if (AnnoyingStuffRemover.CONFIG.DISABLE_RECIPE_BOOK.get()) {
+        if (AnnoyingStuffRemover.CONFIG.disableRecipeBook.get()) {
             ci.cancel();
         }
     }
