@@ -23,7 +23,7 @@ public abstract class TitleScreenMixin extends Screen {
 
     @Inject(method = "lambda$createNormalMenuOptions$8", at = @At("HEAD"))
     void modifyMultiplayerWarning(CallbackInfo ci) {
-        if (AnnoyingStuffRemover.CONFIG.DISABLE_MULTIPLAYER_WARNING.get()) {
+        if (AnnoyingStuffRemover.CONFIG.disableMultiplayerWarning.get()) {
             assert minecraft != null;
 
             minecraft.options.skipMultiplayerWarning = true;

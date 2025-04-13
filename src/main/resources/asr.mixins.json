@@ -6,6 +6,7 @@
   "client": [
     "AbstractRecipeBookScreenMixin",
     "MinecraftMixin",
+    "PrimaryLevelDataMixin",
     "RecipeToastMixin",
     "TitleScreenMixin",
     "TutorialMixin"

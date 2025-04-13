@@ -25,7 +25,7 @@ public abstract class AbstractRecipeBookScreenMixin extends Screen {
 
     @Redirect(method = "initButton", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/screens/inventory/AbstractRecipeBookScreen;addRenderableWidget(Lnet/minecraft/client/gui/components/events/GuiEventListener;)Lnet/minecraft/client/gui/components/events/GuiEventListener;"))
     protected <T extends GuiEventListener & Renderable & NarratableEntry> T modifyAddRenderableWidget(AbstractRecipeBookScreen<?> instance, T widget) {
-        if (AnnoyingStuffRemover.CONFIG.DISABLE_RECIPE_BOOK.get()) {
+        if (AnnoyingStuffRemover.CONFIG.disableRecipeBook.get()) {
             return null;
         } else {
             return addRenderableWidget(widget);
