@@ -5,6 +5,8 @@
   "config.asr.disable_multiplayer_warning.tooltip": "Whether to disable the warning before joining a multiplayer server",
   "config.asr.disable_recipe_book": "Disable Recipe Book",
   "config.asr.disable_recipe_book.tooltip": "Whether to disable the recipe book in crafting GUIs",
+  "config.asr.skip_experimental_warning": "Skip Experimental Features Warning",
+  "config.asr.skip_experimental_warning.tooltip": "Whether to skip the experimental features warning when creating or joining a world",
   "config.asr.skip_tutorial": "Skip Tutorial",
   "config.asr.skip_tutorial.tooltip": "Whether to skip the ingame tutorial toasts"
 }

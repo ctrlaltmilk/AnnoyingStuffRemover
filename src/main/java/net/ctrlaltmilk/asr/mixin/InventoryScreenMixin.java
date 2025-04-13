@@ -25,7 +25,7 @@ public abstract class InventoryScreenMixin extends Screen {
 
     @Redirect(method = "init", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/screens/inventory/InventoryScreen;addRenderableWidget(Lnet/minecraft/client/gui/components/events/GuiEventListener;)Lnet/minecraft/client/gui/components/events/GuiEventListener;"))
     <T extends GuiEventListener & Renderable & NarratableEntry> T modifyAddRenderableWidget(InventoryScreen self, T widget) {
-        if (AnnoyingStuffRemover.CONFIG.DISABLE_RECIPE_BOOK.get()) {
+        if (AnnoyingStuffRemover.CONFIG.disableRecipeBook.get()) {
             return null;
         } else {
             return addRenderableWidget(widget);

@@ -11,30 +11,36 @@ import net.neoforged.neoforge.common.ModConfigSpec;
 import java.util.function.Supplier;
 
 public class ASRConfig {
-    public final Supplier<Boolean> DISABLE_ACCESSIBILITY_ONBOARDING;
-    public final Supplier<Boolean> DISABLE_MULTIPLAYER_WARNING;
-    public final Supplier<Boolean> SKIP_TUTORIAL;
-    public final Supplier<Boolean> DISABLE_RECIPE_BOOK;
+    public final Supplier<Boolean> disableAccessibilityOnboarding;
+    public final Supplier<Boolean> disableMultiplayerWarning;
+    public final Supplier<Boolean> skipTutorial;
+    public final Supplier<Boolean> disableRecipeBook;
+    public final Supplier<Boolean> skipExperimentalWarning;
 
     public ASRConfig(ModConfigSpec.Builder builder) {
-        DISABLE_ACCESSIBILITY_ONBOARDING = builder
+        disableAccessibilityOnboarding = builder
                 .comment(" Whether to disable the initial accessibility onboarding screen")
                 .translation("config.asr.disable_accessibility_onboarding")
                 .define("disableAccessibilityOnboarding", true);
 
-        DISABLE_MULTIPLAYER_WARNING = builder
+        disableMultiplayerWarning = builder
                 .comment(" Whether to disable the warning before joining a multiplayer server")
                 .translation("config.asr.disable_multiplayer_warning")
                 .define("disableMultiplayerWarning", true);
 
-        SKIP_TUTORIAL = builder
+        skipTutorial = builder
                 .comment(" Whether to skip the ingame tutorial toasts")
                 .translation("config.asr.skip_tutorial")
                 .define("skipTutorial", true);
 
-        DISABLE_RECIPE_BOOK = builder
+        disableRecipeBook = builder
                 .comment(" Whether to disable the recipe book in crafting GUIs")
                 .translation("config.asr.disable_recipe_book")
                 .define("disableRecipeBook", true);
+
+        skipExperimentalWarning = builder
+                .comment(" Whether to skip the experimental features warning when creating or joining a world")
+                .translation("config.asr.skip_experimental_warning")
+                .define("skipExperimentalWarning", true);
     }
 }

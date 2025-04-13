@@ -2,7 +2,7 @@ plugins {
     id("net.neoforged.gradle.userdev") version "7.0+"
 }
 
-project.version = "2.1.0"
+project.version = "2.2.0"
 project.group = "net.ctrlaltmilk"
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(21)

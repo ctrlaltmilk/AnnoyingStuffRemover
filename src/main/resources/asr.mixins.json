@@ -8,6 +8,7 @@
     "CraftingScreenMixin",
     "InventoryScreenMixin",
     "MinecraftMixin",
+    "PrimaryLevelDataMixin",
     "RecipeToastMixin",
     "TitleScreenMixin",
     "TutorialMixin"
