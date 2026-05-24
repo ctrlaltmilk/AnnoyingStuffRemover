@@ -2,10 +2,10 @@ plugins {
     id("net.neoforged.gradle.userdev") version "7.1.36"
 }
 
-project.version = "3.1.0"
+project.version = "4.0.0"
 project.group = "net.ctrlaltmilk"
 
-java.toolchain.languageVersion = JavaLanguageVersion.of(21)
+java.toolchain.languageVersion = JavaLanguageVersion.of(25)
 
 runs {
     configureEach {
@@ -14,7 +14,7 @@ runs {
 }
 
 dependencies {
-    implementation("net.neoforged:neoforge:21.4.124")
+    implementation("net.neoforged:neoforge:26.1.0.19-beta")
 }
 
 tasks {
